@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header.jsx';
 import Navbar from './Navbar.jsx';
 import Topbox from './Topbox.jsx';
+import Bottom from './Bottom.jsx';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar/>
       <Topbox/>
       <div className="container-view">Some activities should be here</div>
+      <Bottom/>
     </div>
   );
 };
