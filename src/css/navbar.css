@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   justify-content: center;
+  height:25px;
   padding-left: 0px;
   background-color: white;
   padding-bottom:10px;
@@ -8,19 +9,21 @@
 .activity {
   flex:1;
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   justify-content: left;
+  padding-left: 10px;
 }
 .submenu {
   flex:2;
+  height:20px;
   display: flex;
   justify-content: space-evenly;
   align-self: flex-end;
   color: darkgrey;
 }
 .inbox:hover, .allcalls:hover {
-  font-weight : bold;
-  border-bottom: 2px solid red;
+  /* font-weight : bold; */
+  border-bottom: 4px solid red;
   color: black;
-  padding-bottom:10px;
+  padding-bottom:5px;
 }
