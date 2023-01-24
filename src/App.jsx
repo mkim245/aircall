@@ -34,7 +34,7 @@ const App = () => {
     if (date_part[1] === '09') month = 'September';
     if (date_part[1] === '10') month = 'October';
     if (date_part[1] === '11') month = 'November';
-    if (date_part[1] === '12') month =' December';
+    if (date_part[1] === '12') month = ' December';
     return newdate = month + ',' + ' ' + date_part[2] + ' ' + date_part[0];
   }
 
@@ -60,18 +60,21 @@ const App = () => {
       <Header />
       <Navbar />
       <Topbox />
-      <div className="container-view">
-        {contacts.map((contact) => (
+      <div  className="container-sub">
+        {contacts.map((contact, i
+        ) => (
           // fragment is not working<></>
           contact.call_type === "missed"
-            ? <React.Fragment>
-              <div>----{dateChange((contact.created_at).split('T')[0])}----</div>
-              <span>📲</span>
-              <span>
-                <span>{contact.from}</span> <span>tried to call on Xavior</span>
-              </span>
-              <span>{timeTo12HrFormat(((contact.created_at).split('T')[1]).split('.')[0])}</span>
-            </React.Fragment>
+            ? <div key={i}>
+              <span>----{dateChange((contact.created_at).split('T')[0])}----</span>
+              <div className="container-view">
+                <span>📲</span>
+                <span>
+                  <span>{contact.from}</span> <span>tried to call on Xavior</span>
+                </span>
+                <span>{timeTo12HrFormat(((contact.created_at).split('T')[1]).split('.')[0])}</span>
+              </div>
+            </div>
             : <React.Fragment></React.Fragment>
         ))}
       </div>
