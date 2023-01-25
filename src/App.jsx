@@ -60,19 +60,26 @@ const App = () => {
       <Header />
       <Navbar />
       <Topbox />
-      <div  className="container-sub">
+      <div className="container-sub">
         {contacts.map((contact, i
         ) => (
           // fragment is not working<></>
           contact.call_type === "missed"
             ? <div key={i}>
-              <span>----{dateChange((contact.created_at).split('T')[0])}----</span>
+              <span>---------------------------{dateChange((contact.created_at).split('T')[0])}---------------------------</span>
               <div className="container-view">
-                <span>📲</span>
-                <span>
-                  <span>{contact.from}</span> <span>tried to call on Xavior</span>
+                {/* <span className="container-call"> */}
+                  <span className="container-call">📲
+                  <span className="container-contact">
+                    <span>{contact.from}</span>
+                    <span>tried to call on Xavior</span>
+                  </span>
                 </span>
-                <span>{timeTo12HrFormat(((contact.created_at).split('T')[1]).split('.')[0])}</span>
+                <span className="container-date">
+                  <span>|</span>
+                  <span>{timeTo12HrFormat(((contact.created_at).split('T')[1]).split('.')[0]).split(' ')[0]}</span>
+                  <span>{timeTo12HrFormat(((contact.created_at).split('T')[1]).split('.')[0]).split(' ')[1]}</span>
+                </span>
               </div>
             </div>
             : <React.Fragment></React.Fragment>
