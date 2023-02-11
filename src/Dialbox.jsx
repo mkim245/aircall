@@ -4,6 +4,7 @@ const Dialbox = () => {
   return (
     <div className="container-sub">
       <div className="dial">
+        <div className="display"></div>
           <div>1</div>
           <div>2</div>
           <div>3</div>
@@ -13,9 +14,10 @@ const Dialbox = () => {
           <div>7</div>
           <div>8</div>
           <div>9</div>
-          <div>*</div>      
+          <div>*</div>
           <div>0</div>
-          <div>#</div>          
+          <div>#</div>
+
       </div>
     </div>
   )
