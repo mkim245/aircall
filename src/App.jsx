@@ -5,6 +5,7 @@ import Navbar from './Navbar.jsx';
 import Topbox from './Topbox.jsx';
 import Bottom from './Bottom.jsx';
 import Getapi from './Getapi.jsx';
+import Dialbox from './Dialbox.jsx';
 import Allcalls from './Allcalls.jsx';
 import Inbox from './Inbox.jsx';
 
@@ -17,12 +18,9 @@ const App = () => {
       <Header />
       <Navbar />
       <Topbox />
-      {/* {!inbox && !allcalls && <Getapi />} */}
+      <Dialbox />
       {inbox && !allcalls && <Inbox />}     
       {!inbox && allcalls && <Allcalls />}
-      {/* <Inbox /> */}
-      {/* {!inbox && allcalls && <Getapi />}
-      {!allcalls && inbox && <Getapi />} */}
       <Bottom />
     </div>
   );
