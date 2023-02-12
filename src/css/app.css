@@ -21,7 +21,7 @@
 .container-sub {
   height: 65%;
   width: auto;
-  background-color: white;
+  background-color: black;
   overflow: auto;
 }
 .container-view {
