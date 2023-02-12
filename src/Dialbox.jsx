@@ -10,6 +10,9 @@ const Dialbox = () => {
   const del = function () {
     setCurrent(`${current.slice(0, -1)}`);
   }
+  const dial = function () {
+    setCurrent(`....calling`);
+  }
 
   return (
     <div className="container-sub">
@@ -30,7 +33,7 @@ const Dialbox = () => {
         <div onClick={() => append('0')}>0</div>
         <div>#</div>
         <div></div>
-        <div className="calling">
+        <div className="calling" onClick={() => dial()}>
           <LocalPhoneSharpIcon sx={{ fontSize: 50, "color": "white", "background-color": "green", "border-radius": "50%", "padding": "7px 7px" }}></LocalPhoneSharpIcon>
         </div>
         <div onClick={() => del()}><BackspaceIcon></BackspaceIcon></div>
