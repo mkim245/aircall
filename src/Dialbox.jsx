@@ -34,7 +34,9 @@ const Dialbox = () => {
         <div>#</div>
         <div></div>
         <div className="calling" onClick={() => dial()}>
-          <LocalPhoneSharpIcon sx={{ fontSize: 50, "color": "white", "background-color": "green", "border-radius": "50%", "padding": "7px 7px" }}></LocalPhoneSharpIcon>
+          <LocalPhoneSharpIcon
+            sx={{ fontSize: 50, "color": "white", "background-color": current === "....calling" ? "red" : "green", "border-radius": "50%", "padding": "7px 7px" }}
+          ></LocalPhoneSharpIcon>
         </div>
         <div onClick={() => del()}><BackspaceIcon></BackspaceIcon></div>
       </div>
