@@ -8,11 +8,13 @@ const Dialbox = () => {
     setCurrent(`${current}` + number);
   }
   const del = function () {
-    setCurrent(`${current.slice(0, -1)}`);
+    current.includes('....calling')
+    ? setCurrent(`${current}`)
+    : setCurrent(`${current.slice(0, -1)}`);
   }
   const dial = function () {
-    current === '....calling'
-    ? setCurrent('') : setCurrent(`....calling`);
+    current.includes('....calling')
+    ? setCurrent(`${current.slice(0, -11)}`) : setCurrent(`${current}`+'....calling');
   }
 
   return (
@@ -36,7 +38,7 @@ const Dialbox = () => {
         <div></div>
         <div className="calling" onClick={() => dial()}>
           <LocalPhoneSharpIcon
-            sx={{ fontSize: 50, "color": "white", "background-color": current === "....calling" ? "red" : "green", "border-radius": "50%", "padding": "7px 7px" }}
+            sx={{ fontSize: 50, "color": "white", "background-color": current.includes('....calling') ? "red" : "green", "border-radius": "50%", "padding": "7px 7px" }}
           ></LocalPhoneSharpIcon>
         </div>
         <div onClick={() => del()}><BackspaceIcon></BackspaceIcon></div>
