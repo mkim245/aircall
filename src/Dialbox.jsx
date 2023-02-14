@@ -11,7 +11,8 @@ const Dialbox = () => {
     setCurrent(`${current.slice(0, -1)}`);
   }
   const dial = function () {
-    setCurrent(`....calling`);
+    current === '....calling'
+    ? setCurrent('') : setCurrent(`....calling`);
   }
 
   return (
