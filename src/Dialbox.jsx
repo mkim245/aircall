@@ -37,9 +37,9 @@ const Dialbox = () => {
         <div onClick={() => append('7')}>7</div>
         <div onClick={() => append('8')}>8</div>
         <div onClick={() => append('9')}>9</div>
-        <div>✳</div>
+        <div onClick={() => append('✳')}>✳</div>
         <div onClick={() => append('0')}>0</div>
-        <div>#</div>
+        <div onClick={() => append('#')}>#</div>
         <div onClick={() => clear()}>C</div>
         <div className="calling" onClick={() => dial()}>
           <LocalPhoneSharpIcon
