@@ -16,6 +16,11 @@ const Dialbox = () => {
     current.includes('....calling')
     ? setCurrent(`${current.slice(0, -11)}`) : setCurrent(`${current}`+'....calling');
   }
+  const clear = function () {
+    current.includes('....calling')
+    ? setCurrent(`${current}`)
+    : setCurrent('');
+  }
 
   return (
     <div className="container-sub">
@@ -35,7 +40,7 @@ const Dialbox = () => {
         <div>✳</div>
         <div onClick={() => append('0')}>0</div>
         <div>#</div>
-        <div></div>
+        <div onClick={() => clear()}>C</div>
         <div className="calling" onClick={() => dial()}>
           <LocalPhoneSharpIcon
             sx={{ fontSize: 50, "color": "white", "background-color": current.includes('....calling') ? "red" : "green", "border-radius": "50%", "padding": "7px 7px" }}
