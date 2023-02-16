@@ -4,26 +4,31 @@ import BackspaceIcon from '@mui/icons-material/Backspace';
 
 const Dialbox = () => {
   const [current, setCurrent] = React.useState('');
+
   const append = function (number) {
-    setCurrent(`${current}` + number);
+    current.includes('....calling')
+      ? setCurrent(`${current}`)
+      : setCurrent(`${current}` + number);
   }
   const del = function () {
     current.includes('....calling')
-    ? setCurrent(`${current}`)
-    : setCurrent(`${current.slice(0, -1)}`);
+      ? setCurrent(`${current}`)
+      : setCurrent(`${current.slice(0, -1)}`);
   }
   const dial = function () {
     current.includes('....calling')
-    ? setCurrent(`${current.slice(0, -11)}`) : setCurrent(`${current}`+'....calling');
+      ? setCurrent(`${current.slice(0, -11)}`)
+      : setCurrent(`${current}` + '....calling');
   }
   const clear = function () {
     current.includes('....calling')
-    ? setCurrent(`${current}`)
-    : setCurrent('');
+      ? setCurrent(`${current}`)
+      : setCurrent('');
   }
 
   return (
     <div className="container-sub">
+      <div className="topbox">Phone ~~~~~~~</div>
       <div className="dial">
         <div className="display">
           <div className="dialnumber">{current}</div>
@@ -41,11 +46,12 @@ const Dialbox = () => {
         <div onClick={() => append('0')}>0</div>
         <div onClick={() => append('#')}>#</div>
         <div onClick={() => clear()}>C</div>
-        <div className="calling" onClick={() => dial()}>
+        {/* <div className="calling" onClick={() => dial()}> */}
+        <a href={"tel:" + current} className="calling" onClick={() => dial()}>
           <LocalPhoneSharpIcon
             sx={{ fontSize: 50, "color": "white", "background-color": current.includes('....calling') ? "red" : "green", "border-radius": "50%", "padding": "7px 7px" }}
           ></LocalPhoneSharpIcon>
-        </div>
+        </a>
         <div onClick={() => del()}><BackspaceIcon></BackspaceIcon></div>
       </div>
     </div>

@@ -17,7 +17,7 @@ const App = () => {
     <div className='container'>
       <Header />
       <Navbar />
-      <Topbox />
+      {/* <Topbox /> */}
       <Dialbox />
       {inbox && !allcalls && <Inbox />}     
       {!inbox && allcalls && <Allcalls />}
