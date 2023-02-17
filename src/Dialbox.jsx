@@ -46,7 +46,6 @@ const Dialbox = () => {
         <div onClick={() => append('0')}>0</div>
         <div onClick={() => append('#')}>#</div>
         <div onClick={() => clear()}>C</div>
-        {/* <div className="calling" onClick={() => dial()}> */}
         <a href={"tel:" + current.slice(0, -11)} className="calling" onClick={() => dial()}>
           <LocalPhoneSharpIcon
             sx={{ fontSize: 50, "color": "white", "background-color": current.includes('....calling') ? "red" : "green", "border-radius": "50%", "padding": "7px 7px" }}

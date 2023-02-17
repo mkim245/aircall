@@ -8,6 +8,7 @@ import Getapi from './Getapi.jsx';
 import Dialbox from './Dialbox.jsx';
 import Allcalls from './Allcalls.jsx';
 import Inbox from './Inbox.jsx';
+import Contact from './Contact.jsx';
 
 const App = () => {
   const [inbox, setInbox] = React.useState(false)
@@ -18,7 +19,8 @@ const App = () => {
       <Header />
       <Navbar />
       {/* <Topbox /> */}
-      <Dialbox />
+      {/* <Dialbox /> */}
+      <Contact />
       {inbox && !allcalls && <Inbox />}     
       {!inbox && allcalls && <Allcalls />}
       <Bottom />
